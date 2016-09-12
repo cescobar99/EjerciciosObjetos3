@@ -45,6 +45,7 @@ public class Principal extends javax.swing.JFrame {
         txtReal3 = new javax.swing.JTextField();
         cmdCalcular = new javax.swing.JButton();
         cmdLimpiar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -52,6 +53,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Números complejos");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
 
@@ -67,7 +69,7 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
         jLabel3.setText("(                    +                    i  )");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, -1, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 280, 20));
 
         txtImag2.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         jPanel1.add(txtImag2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, 70, -1));
@@ -76,8 +78,8 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(txtReal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 70, -1));
 
         cmbOperacion.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
-        cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "+", "−", "×", "÷" }));
-        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, -1, -1));
+        cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suma", "Resta", "Multiplicacion", "Division", " " }));
+        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 60, -1));
 
         jLabel4.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
         jLabel4.setText("(                    +                     i  )");
@@ -98,7 +100,7 @@ public class Principal extends javax.swing.JFrame {
                 cmdCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 180, -1, -1));
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
 
         cmdLimpiar.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         cmdLimpiar.setText("Limpiar");
@@ -107,37 +109,42 @@ public class Principal extends javax.swing.JFrame {
                 cmdLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 180, -1, -1));
+        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, -1, -1));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 230));
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(51, 51, 255));
+        jLabel5.setText("=");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 30, 20));
 
-        setSize(new java.awt.Dimension(535, 268));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 230));
+
+        setSize(new java.awt.Dimension(584, 232));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
         // TODO add your handling code here:
-        int op;
-        double r1, r2, i1, i2;
+        int operacion;
+        double real1, real2, imaginario1, imaginario2;
         clase c1;
         clase c2, c3 = null;
         int sw = 1;
 
         if (txtReal1.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "digite número real del complejo  1", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "digite número real del complejo  #1", "Error", JOptionPane.ERROR_MESSAGE);
             txtReal1.requestFocusInWindow();
         } else if (txtImag1.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "digite número imaginario del complejo 1", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "digite número imaginario del complejo #1", "Error", JOptionPane.ERROR_MESSAGE);
             txtImag1.requestFocusInWindow();
         } else if (txtReal2.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "digite número real del complejo 2", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "digite número real del complejo #2", "Error", JOptionPane.ERROR_MESSAGE);
             txtReal2.requestFocusInWindow();
         } else if (txtImag2.getText().trim().isEmpty()) {
-            JOptionPane.showMessageDialog(this, "digite número imaginario del complejo 2", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "digite número imaginario del complejo #2", "Error", JOptionPane.ERROR_MESSAGE);
             txtImag2.requestFocusInWindow();
         } else {
             try {
-                r1 = Integer.parseInt(txtReal1.getText());
+                real1 = Integer.parseInt(txtReal1.getText());
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "El número real del complejo 1 debe ser valido", "Error", JOptionPane.ERROR_MESSAGE);
                 txtReal1.requestFocusInWindow();
@@ -145,7 +152,7 @@ public class Principal extends javax.swing.JFrame {
                 sw = 0;
             }
             try {
-                i1 = Integer.parseInt(txtImag1.getText());
+                imaginario1 = Integer.parseInt(txtImag1.getText());
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "El número imaginario del complejo 1 debe ser valido", "Error", JOptionPane.ERROR_MESSAGE);
                 txtImag1.requestFocusInWindow();
@@ -153,7 +160,7 @@ public class Principal extends javax.swing.JFrame {
                 sw = 0;
             }
             try {
-                r2 = Integer.parseInt(txtReal2.getText());
+                real2 = Integer.parseInt(txtReal2.getText());
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "El número real del complejo 2 debe ser valido", "Error", JOptionPane.ERROR_MESSAGE);
                 txtReal2.requestFocusInWindow();
@@ -161,7 +168,7 @@ public class Principal extends javax.swing.JFrame {
                 sw = 0;
             }
             try {
-                i2 = Integer.parseInt(txtImag2.getText());
+                imaginario2 = Integer.parseInt(txtImag2.getText());
             } catch (NumberFormatException e) {
                 JOptionPane.showMessageDialog(this, "El número imaginario del complejo 2 debe ser valido", "Error", JOptionPane.ERROR_MESSAGE);
                 txtImag2.requestFocusInWindow();
@@ -169,17 +176,17 @@ public class Principal extends javax.swing.JFrame {
                 sw = 0;
             }
             if (sw == 1) {
-                op = cmbOperacion.getSelectedIndex();
-                r1 = Integer.parseInt(txtReal1.getText());
-                i1 = Integer.parseInt(txtImag1.getText());
-                r2 = Integer.parseInt(txtReal2.getText());
-                i2 = Integer.parseInt(txtImag2.getText());
+                operacion = cmbOperacion.getSelectedIndex();
+                real1 = Integer.parseInt(txtReal1.getText());
+                imaginario1 = Integer.parseInt(txtImag1.getText());
+                real2 = Integer.parseInt(txtReal2.getText());
+                imaginario2 = Integer.parseInt(txtImag2.getText());
 
                 try {
-                    c1 = new clase(r1, i1);
-                    c2 = new clase(r2, i2);
+                    c1 = new clase(real1, imaginario1);
+                    c2 = new clase(real2, imaginario2);
 
-                    switch (op) {
+                    switch (operacion) {
                         case 0:
                             c3 = c1.sumar(c2);
                             break;
@@ -197,10 +204,10 @@ public class Principal extends javax.swing.JFrame {
                     txtImag3.setText("" + c3.getImag());
                 } catch (ComplejosDivisionCeroException e) {
                     JOptionPane.showMessageDialog(null, e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
-                    if (r2 == 0) {
+                    if (real2 == 0) {
                         txtReal2.requestFocusInWindow();
                         txtReal2.selectAll();
-                    } else if (i2 == 0) {
+                    } else if (imaginario2 == 0) {
                         txtImag2.requestFocusInWindow();
                         txtImag2.selectAll();
                     }
@@ -264,6 +271,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtImag1;
     private javax.swing.JTextField txtImag2;
