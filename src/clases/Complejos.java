@@ -9,12 +9,12 @@ package clases;
  *
  * @author Camilo_Escobar
  */
-public class clase {
+public class Complejos {
     
     private double real;
     private double imag;
     
-    public clase(Double real,double imag){
+    public Complejos(Double real,double imag){
         this.real=real;
         this.imag=imag;
     }
@@ -35,42 +35,42 @@ public class clase {
         this.imag = imag;
     }
     
-    public clase sumar(clase c2){
-        clase c;
+    public Complejos sumar(Complejos c2){
+        Complejos c;
         double real,imag;
         real=(this.real+c2.real);
         imag=(this.imag+c2.imag);
-        c=new clase(real,imag);
+        c=new Complejos(real,imag);
         return c;
         
     }
-    public clase restar(clase c2){
-        clase c;
+    public Complejos restar(Complejos c2){
+        Complejos c;
         double real,imag;
         real=(this.real-c2.real);
         imag=(this.imag-c2.imag);
-        c=new clase(real,imag);
+        c=new Complejos(real,imag);
         return c;
         
     }
-    public clase multiplicar(clase c2){
-        clase c;
+    public Complejos multiplicar(Complejos c2){
+        Complejos c;
         double real,imag;
         real=(this.real*c2.real)-(this.imag*c2.imag);
         imag=(this.real*c2.imag)+(this.imag*c2.real);
-        c=new clase(real,imag);
+        c=new Complejos(real,imag);
         return c;
         
     }
-    public clase dividir(clase c2) throws ComplejosDivisionCeroException{
-        clase c;
+    public Complejos dividir(Complejos c2) throws ComplejosDivisionCeroException{
+        Complejos c;
         double real,imag;
         if ((c2.real==0)||(c2.imag==0)) {
             throw new ComplejosDivisionCeroException();
         }
        real=((this.real*c2.real)+(this.imag*c2.imag))/((c2.real*c2.real)+(c2.imag*c2.imag));
         imag=((-this.real*c2.imag)+(this.imag*c2.real))/((c2.real*c2.real)+(c2.imag*c2.imag));
-        c=new clase(real,imag);
+        c=new Complejos(real,imag);
         return c;
         
     }

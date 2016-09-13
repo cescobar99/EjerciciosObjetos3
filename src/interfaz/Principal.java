@@ -5,7 +5,7 @@
  */
 package interfaz;
 
-import clases.clase;
+import clases.Complejos;
 import clases.ComplejosDivisionCeroException;
 import javax.swing.JOptionPane;
 
@@ -126,8 +126,9 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         int operacion;
         double real1, real2, imaginario1, imaginario2;
-        clase c1;
-        clase c2, c3 = null;
+        Complejos c1;
+        Complejos c2;
+        clase c3 = null;
         int sw = 1;
 
         if (txtReal1.getText().trim().isEmpty()) {
@@ -183,8 +184,8 @@ public class Principal extends javax.swing.JFrame {
                 imaginario2 = Integer.parseInt(txtImag2.getText());
 
                 try {
-                    c1 = new clase(real1, imaginario1);
-                    c2 = new clase(real2, imaginario2);
+                    c1 = new Complejos(real1, imaginario1);
+                    c2 = new Complejos(real2, imaginario2);
 
                     switch (operacion) {
                         case 0:
