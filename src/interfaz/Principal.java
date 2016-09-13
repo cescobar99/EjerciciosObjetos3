@@ -128,7 +128,7 @@ public class Principal extends javax.swing.JFrame {
         double real1, real2, imaginario1, imaginario2;
         Complejos c1;
         Complejos c2;
-        clase c3 = null;
+        Complejos c3 = null;
         int sw = 1;
 
         if (txtReal1.getText().trim().isEmpty()) {
