@@ -55,43 +55,63 @@ public class Principal extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Bookman Old Style", 1, 18)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 0, 0));
         jLabel1.setText("Números complejos");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, 190, -1));
 
         jLabel2.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
         jLabel2.setText("(                     +                    i  )");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, 20));
 
         txtImag1.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        txtImag1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtImag1KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtImag1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 70, -1));
 
         txtReal1.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
+        txtReal1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtReal1KeyTyped(evt);
+            }
+        });
         jPanel1.add(txtReal1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 70, -1));
 
         jLabel3.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
         jLabel3.setText("(                    +                    i  )");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 70, 280, 20));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 160, 280, 20));
 
         txtImag2.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
-        jPanel1.add(txtImag2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, 70, -1));
+        txtImag2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtImag2KeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtImag2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 70, -1));
 
         txtReal2.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
-        jPanel1.add(txtReal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 70, 70, -1));
+        txtReal2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtReal2KeyTyped(evt);
+            }
+        });
+        jPanel1.add(txtReal2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 160, 70, -1));
 
         cmbOperacion.setFont(new java.awt.Font("Bookman Old Style", 1, 14)); // NOI18N
         cmbOperacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Suma", "Resta", "Multiplicacion", "Division", " " }));
-        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 70, 60, -1));
+        jPanel1.add(cmbOperacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, 120, -1));
 
         jLabel4.setFont(new java.awt.Font("Bookman Old Style", 1, 12)); // NOI18N
         jLabel4.setText("(                    +                     i  )");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 120, -1, 20));
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 110, -1, 20));
 
         txtImag3.setEditable(false);
         txtImag3.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
-        jPanel1.add(txtImag3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 120, 70, -1));
+        jPanel1.add(txtImag3, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 110, 70, -1));
 
         txtReal3.setEditable(false);
         txtReal3.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
-        jPanel1.add(txtReal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 120, 70, -1));
+        jPanel1.add(txtReal3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 70, -1));
 
         cmdCalcular.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         cmdCalcular.setText("Calcular");
@@ -100,7 +120,7 @@ public class Principal extends javax.swing.JFrame {
                 cmdCalcularActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 120, -1, -1));
+        jPanel1.add(cmdCalcular, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 160, -1, -1));
 
         cmdLimpiar.setFont(new java.awt.Font("Bookman Old Style", 0, 12)); // NOI18N
         cmdLimpiar.setText("Limpiar");
@@ -109,21 +129,21 @@ public class Principal extends javax.swing.JFrame {
                 cmdLimpiarActionPerformed(evt);
             }
         });
-        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, -1, -1));
+        jPanel1.add(cmdLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, -1, -1));
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(51, 51, 255));
         jLabel5.setText("=");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, 30, 20));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 110, 30, 20));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 600, 230));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 240));
 
-        setSize(new java.awt.Dimension(584, 232));
+        setSize(new java.awt.Dimension(584, 275));
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cmdCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdCalcularActionPerformed
-        // TODO add your handling code here:
+     
         int operacion;
         double real1, real2, imaginario1, imaginario2;
         Complejos c1;
@@ -218,7 +238,7 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_cmdCalcularActionPerformed
 
     private void cmdLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cmdLimpiarActionPerformed
-        // TODO add your handling code here:
+   
         txtReal1.setText("");
         txtImag1.setText("");
         txtReal2.setText("");
@@ -228,6 +248,38 @@ public class Principal extends javax.swing.JFrame {
         cmbOperacion.setSelectedIndex(0);
         txtReal1.requestFocusInWindow();
     }//GEN-LAST:event_cmdLimpiarActionPerformed
+
+    private void txtReal1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReal1KeyTyped
+    char c=evt.getKeyChar(); 
+    if(!Character.isDigit(c)) { 
+    getToolkit().beep(); 
+    evt.consume(); 
+    }
+    }//GEN-LAST:event_txtReal1KeyTyped
+
+    private void txtImag1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtImag1KeyTyped
+    char c=evt.getKeyChar(); 
+    if(!Character.isDigit(c)) { 
+    getToolkit().beep(); 
+    evt.consume(); 
+    }
+    }//GEN-LAST:event_txtImag1KeyTyped
+
+    private void txtReal2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtReal2KeyTyped
+    char c=evt.getKeyChar(); 
+    if(!Character.isDigit(c)) { 
+    getToolkit().beep(); 
+    evt.consume(); 
+    }
+    }//GEN-LAST:event_txtReal2KeyTyped
+
+    private void txtImag2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtImag2KeyTyped
+    char c=evt.getKeyChar(); 
+    if(!Character.isDigit(c)) { 
+    getToolkit().beep(); 
+    evt.consume(); 
+    }
+    }//GEN-LAST:event_txtImag2KeyTyped
 
     /**
      * @param args the command line arguments
